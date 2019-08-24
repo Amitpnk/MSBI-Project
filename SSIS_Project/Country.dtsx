@@ -11,11 +11,21 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Country"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{92E06559-6DD6-4530-AF3B-C842A7740BE1}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{7230EAAE-B1AD-4AAA-A56B-720F86F46431}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D3122BB1-DAFA-4068-A09F-DB58B7B1BEEA}"
+      DTS:ObjectName="AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=AMIT-PC\SQLEXPRESS;Initial Catalog=CustomerDatawareHouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CountryConnection CSV]"
       DTS:CreationName="FLATFILE"
@@ -72,103 +82,103 @@
           version="1">
           <components>
             <component
-              refId="Package\Load customer (Data Flow Task)\ADO NET Destination"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
-              name="ADO NET Destination"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="The Destination database table name."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimCountry"</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
-                  expressionType="Notify"
-                  name="BatchSize">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
-                  expressionType="Notify"
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
-                  expressionType="Notify"
-                  name="UseBulkInsertWhenPossible">true</property>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Connections[IDbConnection]"
-                  connectionManagerID="{0A47211F-9959-4D4D-B348-BA5D1DC76C2D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Global_ConnectionString]"
-                  description="Managed connection manager"
-                  name="IDbConnection" />
-              </connections>
+              refId="Package\Load customer (Data Flow Task)\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input]"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="ADO NET Destination Input">
+                  refId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CountryId]"
+                      refId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input].Columns[CountryId]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CountryId"
-                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CountryId]"
                       lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryId]" />
                     <inputColumn
-                      refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CountryName]"
+                      refId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input].Columns[CountryName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CountryName"
-                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CountryName]"
                       lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]" />
                   </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CountryId]"
-                      dataType="i4"
-                      name="CountryId" />
-                    <externalMetadataColumn
-                      refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CountryName]"
-                      dataType="wstr"
-                      length="50"
-                      name="CountryName" />
-                  </externalMetadataColumns>
+                  <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
-                  isErrorOut="true"
-                  name="ADO NET Destination Error Output"
-                  synchronousInputId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]"
                       dataType="i4"
-                      lineageId="Package\Load customer (Data Flow Task)\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]"
+                      name="intCountryId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryId]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]"
+                      name="UCountryName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load customer (Data Flow Task)\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load customer (Data Flow Task)\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -297,13 +307,421 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load customer (Data Flow Task)\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCountry]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load customer (Data Flow Task)\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+                  connectionManagerRefId="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].Columns[intCountryId]"
+                      cachedDataType="i4"
+                      cachedName="intCountryId"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryId]"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]" />
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].Columns[UCountryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UCountryName"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryId]"
+                      dataType="i4"
+                      name="CountryId" />
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CountryName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load customer (Data Flow Task)\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimCountry] SET [CountryName] = ? WHERE [CountryId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load customer (Data Flow Task)\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+                  connectionManagerRefId="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].Columns[intCountryId]"
+                      cachedDataType="i4"
+                      cachedName="intCountryId"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]" />
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].Columns[UCountryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UCountryName"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [CountryId], [CountryName] FROM [dbo].[DimCountry]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+                  connectionManagerRefId="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse1]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[intCountryId]"
+                      cachedDataType="i4"
+                      cachedName="intCountryId"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryId]"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryName]"
+                      lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryId]"
+                      dataType="i4"
+                      name="CountryId" />
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CountryName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
+              refId="Package\Load customer (Data Flow Task).Paths[Changing Attribute Updates Output]"
+              endId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Load customer (Data Flow Task).Paths[Data Conversion Output]"
+              endId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Data Conversion Output"
+              startId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Load customer (Data Flow Task).Paths[Flat File Source Output]"
-              endId="Package\Load customer (Data Flow Task)\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              endId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input]"
               name="Flat File Source Output"
               startId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load customer (Data Flow Task).Paths[New Output]"
+              endId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[New Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -332,29 +750,33 @@
     design-time-name="Package\Load customer (Data Flow Task)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Load customer (Data Flow Task)\Flat File Source"
-          TopLeft="419,91" />
+          TopLeft="236.5,5.5" />
         <NodeLayout
-          Size="179,42"
-          Id="Package\Load customer (Data Flow Task)\ADO NET Destination"
-          TopLeft="398,204" />
+          Size="156,42"
+          Id="Package\Load customer (Data Flow Task)\Data Conversion"
+          TopLeft="234,107.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Load customer (Data Flow Task)\Slowly Changing Dimension"
+          TopLeft="207.5,209.5" />
         <EdgeLayout
           Id="Package\Load customer (Data Flow Task).Paths[Flat File Source Output]"
-          TopLeft="491,133">
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,63.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -363,14 +785,164 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[Data Conversion Output]"
+          TopLeft="312,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load customer (Data Flow Task)\Insert Destination"
+          TopLeft="5.50000000000006,311.5" />
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[New Output]"
+          TopLeft="278.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-191.5,60"
+              Start="0,0"
+              End="-191.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-187.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-191.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load customer (Data Flow Task)\OLE DB Command"
+          TopLeft="229,311.5" />
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[Changing Attribute Updates Output]"
+          TopLeft="345.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.5,60"
+              Start="0,0"
+              End="-33.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-29.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.5,24.2735042735043"
+                    Point2="-33.5,24.2735042735043"
+                    Point3="-33.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-33.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load customer (Data Flow Task)\ADO NET Destination">
+    design-time-name="Package\Load customer (Data Flow Task)\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{D3122BB1-DAFA-4068-A09F-DB58B7B1BEEA}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimCountry]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CountryId&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CountryName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load customer (Data Flow Task)\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

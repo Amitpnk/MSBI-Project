@@ -1,5 +1,5 @@
 CountryId,CountryName
 1,India
-2,US
+2,USA
 3,France
 4,Londons
