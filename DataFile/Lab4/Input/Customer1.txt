@@ -1,0 +1,11 @@
+CustomerCode,CustomerName,CustomerAmount,SalesDate,CountryName,StatesName,ProductNME,SalesPersonName
+1001,Amit,100.23,01-01-2010,India,Karnataka,Shoes,Amit
+1002,Shwetha,300,01-06-2011,US,Newyork,Shirts,Krishna
+1003,Krishna,400,01-12-2011,India,Goa,Pants,Shiv
+1004,Shiv,500,01-06-2012,France ,Paris,Toys,Rahul
+1005,Rahul,600,01-12-2012,London,Bromley,Shoes,Sham
+1006,Sham,700,01-06-2013,India,Karnataka,Shirts,Amit
+1007,Sanjay,800,01-12-2013,US,California,Pants,Krishna
+1008,Khadak,-100,01-06-2014,India,Delhi,Toys,Shiv
+1009,Rohit,0,01-12-2014,France ,Paris,Shoes,Rahul
+1010,Dharthi,1100,01-06-2015,London,Bromley,Shirts,Sham

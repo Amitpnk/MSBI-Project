@@ -1,0 +1,5 @@
+ProductId,ProductName
+1,Shoes
+2,Pants
+3,Shirts
+4,Toys

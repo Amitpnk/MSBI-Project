@@ -1,0 +1,8 @@
+StatesId,StatesName
+1,Karnataka
+2,Goa
+3,Newyork
+4,Paris
+5,Bromley
+6,California
+7,Delhi

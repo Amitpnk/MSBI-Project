@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Global_ConnectionString"
+  DTS:DTSID="{0A47211F-9959-4D4D-B348-BA5D1DC76C2D}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=AMIT-PC\SQLEXPRESS;Initial Catalog=CustomerDatawareHouse;Integrated Security=True;Application Name=SSIS-SSIS_Project-{0A47211F-9959-4D4D-B348-BA5D1DC76C2D}AMIT-PC\SQLEXPRESS.CustomerDatawareHouse;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
