@@ -1,0 +1,11 @@
+CustomerCode,CustomerName,CustomerAmount,SalesDate
+1011,Ramesh,100.23,01-01-2010
+1012,Ganesh,300,01-06-2011
+1013,Srijan,400,01-12-2011
+1014,Lama,500,01-06-2012
+1015,Kamalesh,600,01-12-2012
+1016,Bhavesh,700,01-06-2013
+1017,Mahadev,800,01-12-2013
+1018,Pandurang,-100,01-06-2014
+1019,Rohit,0,01-12-2014
+1020,Dharthi,1100,01-06-2015

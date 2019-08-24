@@ -5,31 +5,31 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="AMIT-PC"
   DTS:CreatorName="AMIT-PC\dell"
-  DTS:DTSID="{F939B321-0A29-4E6A-A739-E88579E6338D}"
+  DTS:DTSID="{2C84CE02-D28A-422A-857B-D4C8F95B94EB}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="16393"
   DTS:ObjectName="Lab2"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{C6374C0F-899B-47B9-80ED-69084B9D81E8}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{5B3C12FA-891F-4BDC-B496-2BB14408E38F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[AMIT-PC\SQLEXPRESS.CustomerDatawareHouse]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{A6C6D4C7-BD05-4D45-AD0B-CD95EB467206}"
+      DTS:DTSID="{1E77D7A8-969D-4942-8787-F45D36C629DE}"
       DTS:ObjectName="AMIT-PC\SQLEXPRESS.CustomerDatawareHouse">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=AMIT-PC\SQLEXPRESS;Initial Catalog=CustomerDatawareHouse;Integrated Security=True;Application Name=SSIS-Package-{A6C6D4C7-BD05-4D45-AD0B-CD95EB467206}AMIT-PC\SQLEXPRESS.CustomerDatawareHouse;" />
+          DTS:ConnectionString="Data Source=AMIT-PC\SQLEXPRESS;Initial Catalog=CustomerDatawareHouse;Integrated Security=True;Application Name=SSIS-Package-{1E77D7A8-969D-4942-8787-F45D36C629DE}AMIT-PC\SQLEXPRESS.CustomerDatawareHouse;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{85400DDC-1904-4B8C-97BC-90DE4368BDE2}"
+      DTS:DTSID="{7DF4E36E-EA9C-42EF-814A-39A12A845F40}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerCode"
-              DTS:DTSID="{F2D19768-89DB-42A8-9C00-CD8E1C99C54B}"
+              DTS:DTSID="{ACA54A39-5FC9-4656-A475-ECA5CC4A7B16}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerName"
-              DTS:DTSID="{7054D0A4-870A-4142-AD7B-450808AC23F0}"
+              DTS:DTSID="{4390AED5-9671-497F-A8E0-727227DD6F15}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerAmount"
-              DTS:DTSID="{3AE61D64-8104-4505-879B-D2FA869B0866}"
+              DTS:DTSID="{749B4CFA-5CE4-4C01-B399-7773D126604C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SalesDate"
-              DTS:DTSID="{7226BCDB-CD5A-4018-A17C-0485A16AA642}"
+              DTS:DTSID="{31718809-38A3-4F9D-A0D5-56DA232105F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="UCustomerName"
-              DTS:DTSID="{3E6C5B6E-7E84-4307-85DD-82E462E39D13}"
+              DTS:DTSID="{AAC51766-9471-4869-B077-65DA79B08D24}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerAmountCY"
-              DTS:DTSID="{C2820874-1F21-4C2D-90F1-23A1CDF2920A}"
+              DTS:DTSID="{0F91DF3A-9543-4441-AD8C-6E24616DA185}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -101,7 +101,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{A0DFAFB6-FD40-4259-934D-958E89800A03}"
+      DTS:DTSID="{245C60E7-0C0A-4050-8A4D-EA21B50B1BCD}"
       DTS:ObjectName="Flat File Connection Manager 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -120,7 +120,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerCode"
-              DTS:DTSID="{C5B7FAF4-AD3B-4902-9C00-AC0E1015298E}"
+              DTS:DTSID="{81AB5168-32FD-4F9D-BBDB-F8FBDBD1EFAE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +129,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerName"
-              DTS:DTSID="{8D4C84BF-7497-467E-ADE9-E9B4C6406FC0}"
+              DTS:DTSID="{BC203727-97AB-40CA-B23B-466D85CF4457}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +138,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerAmount"
-              DTS:DTSID="{A981C281-3CAA-432C-ABC4-920F7B760206}"
+              DTS:DTSID="{15209FA8-D242-4EE6-A782-0DD5366988E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +147,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SalesDate"
-              DTS:DTSID="{299346FD-E4EF-44A4-8E95-CC5ACCE79FF7}"
+              DTS:DTSID="{0427DEAE-FB7B-4B0B-A10C-0DE3CF9E1F49}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -156,7 +156,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="UCustomerName"
-              DTS:DTSID="{EFD0729E-927B-4D0A-9EAD-2415CFA71DFC}"
+              DTS:DTSID="{D0D73AE5-D552-4AFA-B5C5-95C42307D6F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -164,7 +164,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{D0C2698D-03AD-4CE4-83EA-453926D009E7}"
+              DTS:DTSID="{F4E82DA4-016B-402B-B5A0-A7EBD5604EC3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -172,7 +172,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{6DA1972A-36E8-4FB8-9FDA-73790C6A8550}"
+              DTS:DTSID="{85926CF1-F0D0-4485-9EA7-AC91DDE77FF9}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -182,7 +182,7 @@
       DTS:refId="Package.ConnectionManagers[load csv source]"
       DTS:CreationName="FLATFILE"
       DTS:Description="load csv source"
-      DTS:DTSID="{EEFF50BF-B136-4C5D-B061-B6C282F0297A}"
+      DTS:DTSID="{FBE333E5-66E3-4D6C-873B-CE9AC10180D7}"
       DTS:ObjectName="load csv source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -202,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerCode"
-              DTS:DTSID="{9FD4EE33-951B-4DBF-81A3-206241F0A6A5}"
+              DTS:DTSID="{A3273C0E-1146-4A95-9F72-CBA5650289D8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerName"
-              DTS:DTSID="{C5BF1897-C01F-4D7B-9E04-994F6D372FEF}"
+              DTS:DTSID="{C87127B0-F27B-4537-974D-845BE86A2C0B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerAmount"
-              DTS:DTSID="{9CE173C2-DF41-4B5F-B872-C6A0E0B012FC}"
+              DTS:DTSID="{2F3F7D54-43D5-42FD-A0C5-AEA3AEA8E467}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SalesDate"
-              DTS:DTSID="{EBE00910-4264-4A1C-9CF3-F327CD570326}"
+              DTS:DTSID="{7767CD95-84AA-486E-855B-ACA14C0315F4}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -242,7 +242,7 @@
       DTS:refId="Package\Load CSV"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{e0f4b6ea-328c-4a10-b8c9-83957d31dda4}"
+      DTS:DTSID="{4570C785-C051-4C2B-8E4C-BF6E3BBF59E4}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load CSV"
