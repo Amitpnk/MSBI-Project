@@ -1,4 +1,4 @@
-CustomerCode,CustomerName,CustomerAmount,SalesDate,CountryName,StatesName,ProductNME,SalesPersonName
+CustomerCode,CustomerName,CustomerAmount,SalesDate,CountryName,StatesName,ProductName,SalesPersonName
 1001,Amit,100.23,01-01-2010,India,Karnataka,Shoes,Amit
 1002,Shwetha,300,01-06-2011,US,Newyork,Shirts,Krishna
 1003,Krishna,400,01-12-2011,India,Goa,Pants,Shiv
