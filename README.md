@@ -49,10 +49,10 @@ In **Lab3.dtsx** will see how we can extract dynamically with multiple csv files
 ### Lab 4 - Dimension, measures, start schema, snow flake, shared connection managers and package tasks
 
 There is mainly 2 category of tables <br>
-* Measures/Facts - Is numerical property
-* Dimensions -  Context of Measures
+* **Measures/Facts** - Is numerical property 
+* **Dimensions** -  Context of Measures
 
 Eg: Sales Amount as per country, year and product
-here Sales Amount is _Measures_ and Country is _Dimensions_
+here Sales Amount is *Measures* and Country is *Dimensions*
 
 ## SSAS
