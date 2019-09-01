@@ -44,10 +44,15 @@ In **Lab3.dtsx** will see how we can extract dynamically with multiple csv files
 *Step 4* - Go to Variable Mapping <br>
 &emsp;&emsp;&emsp;- Add variable *User::FullFilePath*<br>
 *Step 5* - Go to properties of Flat file connection manager (csv connection) -> Expression -> add connectionString to *@User:FullFilePath*<br>
-*Step 6* - Incase of parameter : got to Parameter tab -> setValue and right click on *ForEach loop container* -> Expression -> Directory - *$Package:ParamFilePath* <br>
-
-
+*Step 6* - Incase of parameter : go to Parameter tab -> setValue and right click on *ForEach loop container* -> Expression -> Directory - *$Package:ParamFilePath* <br>
 
 ### Lab 4 - Dimension, measures, start schema, snow flake, shared connection managers and package tasks
+
+There is mainly 2 category of tables <br>
+* Measures/Facts - Is numerical property
+* Dimensions -  Context of Measures
+
+Eg: Sales Amount as per country, year and product
+here Sales Amount is _Measures_ and Country is _Dimensions_
 
 ## SSAS
