@@ -30,6 +30,19 @@ In **Lab2.dtsx** will see how we can create conditional split, data conversion &
 
 ### Lab 3 - For loop, variables & parameters
 
+In **Lab3.dtsx** will see how we can extract dynamically with multiple csv files using for loop and variables/parameters 
+
+*Step 1* - From previous Lab drag *For loop container* and inside this add *Data flow task* <br>
+*Step 2* - Open package *variales* and add variable *FullFilePath* <br>
+*Step 3* - Right click on Foreach loop container and go to Edit -> Collection -> Enumerator <br>
+&emsp;&emsp;&emsp;- Modify *ForEach file enumator* <br>
+&emsp;&emsp;&emsp;- Modify *Folder path source*<br>
+&emsp;&emsp;&emsp;- Modify **.txt*<br>
+&emsp;&emsp;&emsp;- Modify *Fully qualified*<br>
+*Step 4* - Go to Variable Mapping <br>
+&emsp;&emsp;&emsp;- Add variable *User::FullFilePath*<br>
+
+
 ### Lab 4 - Dimension, measures, start schema, snow flake, shared connection managers and package tasks
 
 ## SSAS
