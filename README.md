@@ -4,6 +4,8 @@ BI- (Business Intelligent) converting from Data into Information
 
 Below sample project will see how we can create simple SSIS and SSAS project
 
+You can refer this blog <https://amitpnk.github.io/MSBI-Project/>
+
 ## Sending feedback
 
 For feedback can drop mail to my email address amit.naik8103@gmail.com or you can create issue
