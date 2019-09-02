@@ -49,10 +49,20 @@ In **Lab3.dtsx** will see how we can extract dynamically with multiple csv files
 ### Lab 4 - Dimension, measures, start schema, snow flake, shared connection managers and package tasks
 
 There is mainly 2 category of tables <br>
-* **Measures/Facts** - Is numerical property 
+* **Measures/Facts** - Is numerical property
 * **Dimensions** -  Context of Measures
 
 Eg: Sales Amount as per country, year and product
 here Sales Amount is *Measures* and Country is *Dimensions*
+
+Star schema - Fact is central table with foreign key relationship with dimension
+Snow flake - Same as Star schema and also dimension table also connected
+
+*Step 1* - Create new SSIS package as *Country.dtsx*, *States.dtsx*, *SalesPerson.dtsx*, *Product.dtsx*  and in DataFlow task create FlatFileSource-> ADO NET Destination in each file w.r.t country, states, salesPersion & product csv file <br>
+*Step 2* - Create Global connection string and map to each file instead of creating individual file <br>
+*Step 3* - Create *Main.dtsx* and add control *ExectuePackageTask* and map to each dtsx file mentioned in step 1 <br>
+
+### Lab 5 - SCD (Slowly changing dimension), Type 0, Type 1, OLE DB command and Unicode conversions
+
 
 ## SSAS
