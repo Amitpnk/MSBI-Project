@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Country"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{7230EAAE-B1AD-4AAA-A56B-720F86F46431}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{13833A1F-33E2-4E02-8175-5ED86B06902F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -179,6 +179,154 @@
                       refId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load customer (Data Flow Task)\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Output].Columns[IsNew]"
+                      dataType="bool"
+                      description="IsNew"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Output].Columns[IsNew]"
+                      name="IsNew"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)("0")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)("0")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load customer (Data Flow Task)\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Output].Columns[IsNew]"
+                      dataType="bool"
+                      description="IsNew"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Output].Columns[IsNew]"
+                      name="IsNew"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)("1")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)("1")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load customer (Data Flow Task)\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -384,14 +532,20 @@
                       cachedDataType="i4"
                       cachedName="intCountryId"
                       externalMetadataColumnId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryId]"
-                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]" />
+                      lineageId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[intCountryId]" />
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].Columns[IsNew]"
+                      cachedDataType="bool"
+                      cachedName="IsNew"
+                      externalMetadataColumnId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsNew]"
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Output].Columns[IsNew]" />
                     <inputColumn
                       refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].Columns[UCountryName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="UCountryName"
                       externalMetadataColumnId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
-                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]" />
+                      lineageId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[UCountryName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -404,6 +558,10 @@
                       dataType="wstr"
                       length="50"
                       name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsNew]"
+                      dataType="bool"
+                      name="IsNew" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -450,7 +608,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimCountry] SET [CountryName] = ? WHERE [CountryId] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimCountry] SET [IsNew] = ? WHERE [CountryId] = ? AND [IsNew] = '1'</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -479,19 +637,17 @@
                       externalMetadataColumnId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]" />
                     <inputColumn
-                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].Columns[UCountryName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="UCountryName"
+                      refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].Columns[IsNew]"
+                      cachedDataType="bool"
+                      cachedName="IsNew"
                       externalMetadataColumnId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]" />
+                      lineageId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Output].Columns[IsNew]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="bool"
                       name="Param_0">
                       <properties>
                         <property
@@ -558,11 +714,11 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [CountryId], [CountryName] FROM [dbo].[DimCountry]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [CountryId], [CountryName],[IsNew] FROM [dbo].[DimCountry]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
-                  name="CurrentRowWhere"></property>
+                  name="CurrentRowWhere">[IsNew] = '1'</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
@@ -631,7 +787,7 @@
                         <property
                           dataType="System.Int32"
                           name="ColumnType"
-                          typeConverter="ColumnType">2</property>
+                          typeConverter="ColumnType">3</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -646,6 +802,10 @@
                       dataType="wstr"
                       length="50"
                       name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IsNew]"
+                      dataType="bool"
+                      name="IsNew" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -700,28 +860,228 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load customer (Data Flow Task)\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 1].Columns[CountryId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryId"
+                      lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 1].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 1].Columns[intCountryId]"
+                      cachedDataType="i4"
+                      cachedName="intCountryId"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[intCountryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 1].Columns[UCountryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UCountryName"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[UCountryName]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 2].Columns[CountryId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryId"
+                      lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 2].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      lineageId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 2].Columns[intCountryId]"
+                      cachedDataType="i4"
+                      cachedName="intCountryId"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[intCountryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[intCountryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 2].Columns[UCountryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UCountryName"
+                      lineageId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output].Columns[UCountryName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[UCountryName]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryId]"
+                      name="CountryId" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[CountryName]"
+                      name="CountryName" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[intCountryId]"
+                      dataType="i4"
+                      lineageId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[intCountryId]"
+                      name="intCountryId" />
+                    <outputColumn
+                      refId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[UCountryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1].Columns[UCountryName]"
+                      name="UCountryName" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
-            <path
-              refId="Package\Load customer (Data Flow Task).Paths[Changing Attribute Updates Output]"
-              endId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input]"
-              name="Changing Attribute Updates Output"
-              startId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Load customer (Data Flow Task).Paths[Data Conversion Output]"
               endId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Data Conversion Output"
               startId="Package\Load customer (Data Flow Task)\Data Conversion.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\Load customer (Data Flow Task).Paths[Derived Column Output]"
+              endId="Package\Load customer (Data Flow Task)\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Load customer (Data Flow Task)\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load customer (Data Flow Task).Paths[Derived Column Output1]"
+              endId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load customer (Data Flow Task)\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Load customer (Data Flow Task).Paths[Flat File Source Output]"
               endId="Package\Load customer (Data Flow Task)\Data Conversion.Inputs[Data Conversion Input]"
               name="Flat File Source Output"
               startId="Package\Load customer (Data Flow Task)\Flat File Source.Outputs[Flat File Source Output]" />
             <path
+              refId="Package\Load customer (Data Flow Task).Paths[Historical Attribute Inserts Output]"
+              endId="Package\Load customer (Data Flow Task)\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
               refId="Package\Load customer (Data Flow Task).Paths[New Output]"
-              endId="Package\Load customer (Data Flow Task)\Insert Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 1]"
               name="New Output"
               startId="Package\Load customer (Data Flow Task)\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Load customer (Data Flow Task).Paths[OLE DB Command Output]"
+              endId="Package\Load customer (Data Flow Task)\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Load customer (Data Flow Task)\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Load customer (Data Flow Task).Paths[Union All Output 1]"
+              endId="Package\Load customer (Data Flow Task)\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Load customer (Data Flow Task)\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -754,18 +1114,18 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Load customer (Data Flow Task)\Flat File Source"
-          TopLeft="236.5,5.5" />
+          TopLeft="157,5.5" />
         <NodeLayout
           Size="156,42"
           Id="Package\Load customer (Data Flow Task)\Data Conversion"
-          TopLeft="234,107.5" />
+          TopLeft="154.5,107.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Load customer (Data Flow Task)\Slowly Changing Dimension"
-          TopLeft="207.5,209.5" />
+          TopLeft="128,209.5" />
         <EdgeLayout
           Id="Package\Load customer (Data Flow Task).Paths[Flat File Source Output]"
-          TopLeft="312,47.5">
+          TopLeft="232.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -787,7 +1147,173 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load customer (Data Flow Task).Paths[Data Conversion Output]"
-          TopLeft="312,149.5">
+          TopLeft="232.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load customer (Data Flow Task)\Derived Column"
+          TopLeft="17.5,311.5" />
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[Historical Attribute Inserts Output]"
+          TopLeft="199,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.5,60"
+              Start="0,0"
+              End="-104.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-100.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.5,24.2735042735043"
+                    Point2="-104.5,24.2735042735043"
+                    Point3="-104.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-104.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.30638671875,29.2735042735043,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load customer (Data Flow Task)\OLE DB Command"
+          TopLeft="5.50000000000003,413.5" />
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[Derived Column Output]"
+          TopLeft="91.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load customer (Data Flow Task)\Union All"
+          TopLeft="172,515.5" />
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[New Output]"
+          TopLeft="266,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.6666666666666,264"
+              Start="0,0"
+              End="-14.6666666666666,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.104705383637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,127.104705383637"
+                    Point2="0,131.104705383637"
+                    Point3="-4,131.104705383637" />
+                  <mssgle:LineSegment
+                    End="-10.6666666666666,131.104705383637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.6666666666666,131.104705383637"
+                    Point2="-14.6666666666666,131.104705383637"
+                    Point3="-14.6666666666666,135.104705383637" />
+                  <mssgle:LineSegment
+                    End="-14.6666666666666,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[OLE DB Command Output]"
+          TopLeft="88.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load customer (Data Flow Task)\Derived Column 1"
+          TopLeft="151,617.5" />
+        <EdgeLayout
+          Id="Package\Load customer (Data Flow Task).Paths[Union All Output 1]"
+          TopLeft="232.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -810,81 +1336,27 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Load customer (Data Flow Task)\Insert Destination"
-          TopLeft="5.50000000000006,311.5" />
+          TopLeft="151,719.5" />
         <EdgeLayout
-          Id="Package\Load customer (Data Flow Task).Paths[New Output]"
-          TopLeft="278.5,251.5">
+          Id="Package\Load customer (Data Flow Task).Paths[Derived Column Output1]"
+          TopLeft="232.5,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-191.5,60"
+              EndConnector="0,60"
               Start="0,0"
-              End="-191.5,52.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-187.5,24.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-187.5,24.2735042735043"
-                    Point2="-191.5,24.2735042735043"
-                    Point3="-191.5,28.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-191.5,52.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Load customer (Data Flow Task)\OLE DB Command"
-          TopLeft="229,311.5" />
-        <EdgeLayout
-          Id="Package\Load customer (Data Flow Task).Paths[Changing Attribute Updates Output]"
-          TopLeft="345.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.5,60"
-              Start="0,0"
-              End="-33.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-29.5,24.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.5,24.2735042735043"
-                    Point2="-33.5,24.2735042735043"
-                    Point3="-33.5,28.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-33.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -911,20 +1383,23 @@
       &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CountryName&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
+  &lt;CurrentIndicatorColumn&gt;IsNew&lt;/CurrentIndicatorColumn&gt;
   &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
+  &lt;ValueCurrent&gt;1&lt;/ValueCurrent&gt;
+  &lt;ValueExpired&gt;0&lt;/ValueExpired&gt;
   &lt;StartDateColumn /&gt;
   &lt;EndDateColumn /&gt;
   &lt;DateVariable /&gt;
