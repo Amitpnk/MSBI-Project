@@ -53,7 +53,7 @@ There is mainly 2 category of tables <br>
 * **Dimensions** -  Context of Measures
 
 Eg: Sales Amount as per country, year and product
-here Sales Amount is *Measures* and Country is *Dimensions*
+here <br>Sales Amount is *Measures* and Country is *Dimensions*
 
 Star schema - Fact is central table with foreign key relationship with dimension
 Snow flake - Same as Star schema and also dimension table also connected
